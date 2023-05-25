@@ -4,16 +4,16 @@ import { RoutePathEnum } from './shared-module/utilities/enums/route-path.enum';
 
 const routes: Routes = [
   { 
-    path: RoutePathEnum.Empty, redirectTo: `/${RoutePathEnum.Stats}`, pathMatch: 'full'
+    path: RoutePathEnum.Empty, redirectTo: `/${RoutePathEnum.Stats}/augments`, pathMatch: 'full'
   },
   {
-    path: RoutePathEnum.Stats, loadChildren: () => import('./modules/stats/stats.module')
+    path: RoutePathEnum.Stats, loadChildren: () => import('./modules/stats/stats.module').then(m => m.StatsModule)
   },
   {
-    path: RoutePathEnum.Home, loadChildren: () => import('./modules/home/home.module')
+    path: RoutePathEnum.Home, loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule)
   },
   {
-    path: RoutePathEnum.Tools, loadChildren: () => import('./modules/tools/tools.module')
+    path: RoutePathEnum.Tools, loadChildren: () => import('./modules/tools/tools.module').then(m => m.ToolsModule)
   }
 ];
 

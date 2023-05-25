@@ -6,7 +6,11 @@ import {
   UnitsComponent
  } from './components';
  
-const routes: Routes = [{ path: '', component: AugmentsComponent }];
+const routes: Routes = [
+  { path: 'augments', component: AugmentsComponent },
+  { path: 'items', component: ItemsComponent },
+  { path: 'units', component: UnitsComponent }
+];
 
 @NgModule({
   declarations: [
